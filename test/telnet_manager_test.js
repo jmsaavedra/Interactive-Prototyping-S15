@@ -12,6 +12,8 @@ var Phant = require('../index'),
   app = Phant(),
   connection = new telnet_client();
 
+  console.log("some nonsense");
+
 var keys = Keychain({
   publicSalt: 'public salt',
   privateSalt: 'private salt'
