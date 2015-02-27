@@ -1,0 +1,11 @@
+{
+  "name": "Express-Serve-Content",
+  "version": "0.0.1",
+
+  "dependencies": {
+    
+    "express": "^4.10.1",
+    "mongodb": "^1.4.19",
+    "colors": "^1.0.3"
+  }
+}
