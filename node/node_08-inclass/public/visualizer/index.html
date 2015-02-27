@@ -1,0 +1,44 @@
+<html>
+	
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+		<title>My Data Visualizer! </title>
+	</head>
+
+	<body>
+		<h1>Visualizer !</h1>
+		
+		<h2 class="total-count"></h2>
+		<div id="data">
+		</div>
+
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+
+				setInterval(updateData, 5000);
+			});
+
+
+			function updateData(){
+				$("data").empty();
+
+		        $.getJSON( "http://localhost:8080/output?name=sine", function( data ) {
+					var items = [];
+					
+					$(".total-count").html( "Total number of datapoints: " + data.length);
+					
+					$.each( data, function( i, thisDataObj ) {
+						items.push( "<li id='" + i + "'>" + thisDataObj.data + "</li>" );
+					});
+
+					$( "<ul/>", {
+						"class": "my-data",
+						html: items.join( "" )
+					}).appendTo( "body" );
+				});
+			}
+		</script>
+	</body>
+</html>

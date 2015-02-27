@@ -1,0 +1,45 @@
+<html>
+
+<head>
+	<title>My Site</title>
+	<!--check it out - all socket.io servers actually serves this automatically -->
+	<script src="/socket.io/socket.io.js"></script>
+	<!--include jquery -->
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<h1>This is the index.html page</h1>
+		<p> This is the index.html file in my /public folder </p>
+		<div id="mouselog"></div>
+	</div>
+
+	<script>
+		console.log("hit script")
+		var socket = io();
+		// code to submit a form over our socket:
+		// $('form').submit(function(){
+		//   socket.emit('chat message', $('#m').val());
+		//   $('#m').val('');
+		//   return false;
+		// });
+		$( "body" ).mousemove(function( event ) {
+			var msg = "Handler for .mousemove() called at ";
+			msg += event.pageX + ", " + event.pageY;
+			//console.log(msg);
+			//create a json object with all your data in it
+			var myData = {
+				x: event.pageX,
+				y: event.pageY
+			};
+			socket.emit('event', myData);
+
+			$( "#mouselog" ).append( "<div>" + msg + "</div>" );
+			var len = $( "div" ).length;
+			if (len > 30) $( "#mouselog" ).html(''); //delete 30 oldest ones
+		});
+
+	</script>
+</body>
+</html>
