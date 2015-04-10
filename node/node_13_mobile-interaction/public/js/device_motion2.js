@@ -31,24 +31,15 @@ function draw() {
 /* DEVICE MOTION !!!
 *
 *  https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent
+* https://developer.mozilla.org/en-US/docs/Web/API/DeviceAcceleration
 // DeviceMotionEvent.acceleration
 // DeviceMotionEvent.accelerationIncludingGravity
 // DeviceMotionEvent.rotationRate
 // DeviceMotionEvent.interval 
 *
-* DEVICE ORIENTATION !!!
-* https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent
-// DeviceOrientationEvent.absolute
-// DeviceOrientationEvent.alpha
-// DeviceOrientationEvent.beta
-// DeviceOrientationEvent.gamma
-*
-* DEVICE ACCELERATION !!!
-* https://developer.mozilla.org/en-US/docs/Web/API/DeviceAcceleration
 */
+
 function handleMotionEvent(event) {
-
-
 
     var x = event.accelerationIncludingGravity.x;
     var y = event.accelerationIncludingGravity.y;
@@ -59,17 +50,36 @@ function handleMotionEvent(event) {
     mappedY = map(y, -10.0, 10.0, 0, 500);
     mappedZ = map(z, -10.0, 10.0, 0, 500);
     //document.getElementById("pos").innerHTML = "x: " + mappedX + "<br />y: " + mappedY + "<br />z: " + z;
-    $('#pos').hide();
+    //$('#pos').hide();
+}
+window.addEventListener('devicemotion', handleMotionEvent, true);
+
+ow.addEventListener('devicelight', handleLightEvent, true);
+
+/*
+* DEVICE ORIENTATION !!!
+* https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent
+// DeviceOrientationEvent.absolute
+// DeviceOrientationEvent.alpha
+// DeviceOrientationEvent.beta
+// DeviceOrientationEvent.gamma
+*/
+function handleOrientationEvent(event){
+  // document.getElementById("orientation").innerHTML = 'alpha: '+event.alpha + '<br>beta : ' + event.beta + '<br>gamma : ' + event.gamma;
+  $('#orientation').html('alpha: '+event.alpha + '<br>beta : ' + event.beta + '<br>gamma : ' + event.gamma+'<br>');
 }
 
-window.addEventListener("devicemotion", handleMotionEvent, true);
+window.addEventListener('deviceorientation',handleOrientationEvent); 
 
+
+/*
+* DEVICE LIGHT ???
+* https://developer.mozilla.org/en-US/docs/Web/API/DeviceLightEvent
+*/
 
 function handleLightEvent(event){
-  document.getElementById("pos").innerHTML = "light: "+event.value;
+  // document.getElementById("light").innerHTML = "light: "+event.value;
+  $('#light').text("light: "+event.value);
 }
 
-// window.addEventListener('devicelight', handleLightEvent, true);
-
-window.ondevicelight = handleLightEvent;
-
+wind
