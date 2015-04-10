@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>My Site</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.3/p5.min.js"></script>
+
+</head>
+<body>
+	<h1>This is the index</h1>
+
+	<div id="clickme" style="background-color:#FF0000; width: 100px; height:100px; color:white; padding:25px 10px 0px 10px;">
+		send 'click' socket event
+	</div><br>
+	<form id="textbox" method="post" action="/input/text">
+		<input type="text" placeholder="send text over socket..." name="mytext">
+		<input type="submit" value="Send">
+	</form>
+
+	<h2>Move the Ball</h2> 
+	<div class="yes"> 
+	 	<p>Tilt your device to move the ball. This sample is using Device Orientation and Motion API compatible with iOS since 4.2</p> 
+	  	<p>Mantain your device in portrait orientation for better results (you can lock it)</p> 
+	  	<div id="pos">x=0<br />y=0</div>
+	  	<div id="ball"></div> 
+	</div> 
+
+	<div id="mousedata"></div>
+
+	<script src="js/main.js"></script>
+	<script src="js/device_motion1.js"></script>
+</body>
+</html>

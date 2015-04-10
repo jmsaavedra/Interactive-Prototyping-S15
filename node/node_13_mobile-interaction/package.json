@@ -1,0 +1,17 @@
+{
+  "name": "Express-Serve-Content",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.9.3",
+    "colors": "^1.0.3",
+    "express": "^4.10.1",
+    "mongodb": "^1.4.19",
+    "socket.io": "^1.2.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
