@@ -54,7 +54,7 @@ function handleMotionEvent(event) {
 }
 window.addEventListener('devicemotion', handleMotionEvent, true);
 
-ow.addEventListener('devicelight', handleLightEvent, true);
+
 
 /*
 * DEVICE ORIENTATION !!!
@@ -82,4 +82,4 @@ function handleLightEvent(event){
   $('#light').text("light: "+event.value);
 }
 
-wind
+window.addEventListener('devicelight', handleLightEvent, true);
