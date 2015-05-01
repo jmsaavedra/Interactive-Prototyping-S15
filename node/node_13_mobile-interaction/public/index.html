@@ -7,16 +7,17 @@
 
 </head>
 <body>
-	<h1>This is the index</h1>
-
-	<div id="clickme" style="background-color:#FF0000; width: 100px; height:100px; color:white; padding:25px 10px 0px 10px;">
-		send 'click' socket event
-	</div><br>
-	<form id="textbox" method="post" action="/input/text">
-		<input type="text" placeholder="send text over socket..." name="mytext">
-		<input type="submit" value="Send">
-	</form>
-
+	<h1>This is index.html</h1>
+	<center>
+		<div id="clickme" style="background-color:#FF0000; font-size: 50px; width: 100px; height:400px; width:400px; color:white; padding:25px 10px 0px 10px;">
+			Tap to send a 'click' socket event to the server.
+		</div><br>
+	
+		<form id="textbox" method="post" action="/input/text">
+			<input type="text" placeholder="send text over socket..." name="mytext" style="margin-top:50px; height:100px; width:100%; max-width: 500px; font-size:250%; padding: 25px 15px 25px 15px;">
+			<input type="submit" value="Send" style="margin-top:50px; width:100%; max-width: 500px; height:100px; font-size:250%; background-color:#3E9B93; padding: 25px 15px 25px 15px;">
+		</form>
+	</center>
 	<h2>Move the Ball</h2> 
 	<div class="yes"> 
 	 	<p>Tilt your device to move the ball. This sample is using Device Orientation and Motion API compatible with iOS since 4.2</p> 
@@ -31,7 +32,14 @@
 
 	<div id="mousedata"></div>
 
+	<!-- always load main.js -->
 	<script src="js/main.js"></script>
+
+
+	<!-- try changing out this script for another one in the js/ folder: -->
 	<script src="js/device_motion2.js"></script>
+	<!-- <script src="js/device_motion1.js"></script> -->
+	<!-- <script src="js/location.js"></script> -->
+	
 </body>
 </html>
