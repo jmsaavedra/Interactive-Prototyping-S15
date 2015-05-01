@@ -9,6 +9,7 @@
 *
 *   $ npm install     (to download/install the necessary modules)
 *   $ node app.js     (to launch this node app)
+*   check out pulic/index.html
 *
 */
 
