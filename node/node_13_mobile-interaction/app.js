@@ -11,7 +11,6 @@
 *   $ node app.js     (to launch this node app)
 *   check out pulic/index.html
 *
-*
 */
 
 var express     = require('express');
